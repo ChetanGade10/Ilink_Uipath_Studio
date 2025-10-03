@@ -73,9 +73,10 @@
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Parse an input string having the following format:&#xA;&#xA;&quot;You searched for author X. His books can be found at the following stores: Bookstore 1, Bookstore 2, Bookstore 3&quot;&#xA;&#xA;Print a new string containing the information about the author and the bookstores. Format the output as follows:&#xA;&#xA;&quot;Availability for x: boostore1; &lt;newline&gt; bookstore2; &lt;newline&gt; bookstore3.&quot;" DisplayName="Bookstores Demo" sap:VirtualizedContainerService.HintSize="919.6,688.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Parse an input string having the following format:&#xA;&#xA;&quot;You searched for author X. His books can be found at the following stores: Bookstore 1, Bookstore 2, Bookstore 3&quot;&#xA;&#xA;Print a new string containing the information about the author and the bookstores. Format the output as follows:&#xA;&#xA;&quot;Availability for x: boostore1; &lt;newline&gt; bookstore2; &lt;newline&gt; bookstore3.&quot;" DisplayName="Bookstores Demo" sap:VirtualizedContainerService.HintSize="919.6,831.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="InitialMessage" />
       <Variable x:TypeArguments="x:String" Name="Author" />
@@ -120,6 +121,7 @@
         <InArgument x:TypeArguments="x:String">[String.Format("Availability for {0}: {1}", Author, String.Join(","c+vbcr,Bookstores))]</InArgument>
       </Assign.Value>
     </Assign>
+    <ui:LogMessage DisplayName="Print Result" sap:VirtualizedContainerService.HintSize="449.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[OutputString.ToString]" />
     <ui:LogMessage DisplayName="Print Result" sap:VirtualizedContainerService.HintSize="449.6,133.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[OutputString.ToString]" />
   </Sequence>
 </Activity>
